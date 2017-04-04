@@ -37,17 +37,17 @@ bindsym Print exec scrot -q 100
 # Volume up / down / mute
 
 # standard amixer
-# bindsym Control+Up              exec amixer -q sset Master 2%+ unmute
-# bindsym Control+Down            exec amixer -q sset Master 2%- unmute
-# bindsym XF86AudioRaiseVolume    exec amixer -q sset Master 2%+ unmute
-# bindsym XF86AudioLowerVolume    exec amixer -q sset Master 2%- unmute
-# bindsym XF86AudioMute exec amixer -q set Master toggle; exec amixer -q set Headphone unmute; exec amixer -q set Speaker unmute # does not work proberbly
+bindsym Control+Up              exec amixer -q sset Master 2%+ unmute
+bindsym Control+Down            exec amixer -q sset Master 2%- unmute
+bindsym XF86AudioRaiseVolume    exec amixer -q sset Master 2%+ unmute
+bindsym XF86AudioLowerVolume    exec amixer -q sset Master 2%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle; exec amixer -q set Headphone unmute; exec amixer -q set Speaker unmute # does not work proberbly
 
-bindsym Control+Up              exec ~/bin/sound "+2"
-bindsym Control+Down            exec ~/bin/sound "-2"
-bindsym XF86AudioRaiseVolume    exec ~/bin/sound "+2"
-bindsym XF86AudioLowerVolume    exec ~/bin/sound "-2"
-bindsym XF86AudioMute           exec ~/bin/sound "mute"
+# bindsym Control+Up              exec ~/bin/sound "+2"
+# bindsym Control+Down            exec ~/bin/sound "-2"
+# bindsym XF86AudioRaiseVolume    exec ~/bin/sound "+2"
+# bindsym XF86AudioLowerVolume    exec ~/bin/sound "-2"
+# bindsym XF86AudioMute           exec ~/bin/sound "mute"
 
 # Hivemind setup
 bindsym Control+Shift+Up        exec ~/bin/hivemind_volume up
@@ -67,9 +67,6 @@ floating_modifier $mod
 # bindsym $mod+Return exec gnome-terminal
 # NOTE add +aw for no wordwrap in stdout
 bindsym $mod+Return exec rxvt
-
-# start a sunray terminal
-bindsym $mod+Shift+Return exec rxvt -e ~/bin/sunray --noclose
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -172,9 +169,12 @@ bindsym $mod+r mode "resize"
 # AUTOSTART
 # automatically starting applications on i3 startup
 
+# change resolution
+exec --no-startup-id xrandr --output eDP-1 --auto --dpi 128 --scale 1.5x1.5 --panning 3840x2160
+
 exec --no-startup-id dropbox start # Start Dropbox
 exec --no-startup-id nm-applet -sm-disable # Start  Network Manager
-exec --no-startup-id blueman-applet # Start bluetooth manager
+exec --no-startSpaceup-id blueman-applet # Start bluetooth manager
 
 # Disable Screen saver
 exec --no-startup-id xset s off
@@ -195,7 +195,7 @@ for_window [class="^.*"] border pixel 4
 new_window 1pixel
 
 # Interface                border    title      color
-client.focused             #0373bb   #0373bb    #ffffff    #2e9ef4
+client.focused             #0373bb   #ff0000    #ffffff    #2e9ef4
 client.focused_inactive    #222222   #222222    #ffffff    #484e50
 client.unfocused           #222222   #222222    #888888    #292d2e
 client.urgent              #2f343a   #900000    #ffffff    #900000
