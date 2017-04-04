@@ -28,6 +28,7 @@ symlink_clean:
 depends:
 	# TODO add desktop dependencies
 	sudo apt-get install rxvt-unicode-256color # nice temrinal
+	sudo apt-get install xautolock # lock screen after X time
 	
 	# rxvt depends
 	sudo apt-get install xclip # copy paste for terminal
