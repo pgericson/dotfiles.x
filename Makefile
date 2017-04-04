@@ -14,6 +14,7 @@ symlink:
 	ln -s `pwd`/Xresources ~/.Xresources
 
 bin_folder:
+	mkdir ~/bin
 	# Don't overwrite anything
 	for x in bin/*; do \
 		if [ ! -f ~/$$x  ]; then\
@@ -27,6 +28,7 @@ symlink_clean:
 depends:
 	# TODO add desktop dependencies
 	sudo apt-get install rxvt-unicode-256color # nice temrinal
+	sudo apt-get install xautolock # lock screen after X time
 	
 	# rxvt depends
 	sudo apt-get install xclip # copy paste for terminal
@@ -36,6 +38,7 @@ dropbox:
 	./setup_drobox.sh
 
 fonts:
+	mkdir ~/.fonts
 	./setup_font_monaco.sh
 	./setup_font_menlo.sh
 	./setup_font_mononoki.sh
