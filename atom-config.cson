@@ -1,0 +1,46 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "217e5e3d-1b57-4302-904e-5530e14a14e5"
+    js:
+      indent_size: 2
+    json:
+      indent_size: 2
+  "chrome-color-picker":
+    HexColors:
+      autoShortHex: true
+  core:
+    disabledPackages: [
+      "vim-mode-plus-subword-movement"
+      "linter-slim"
+      "activate-power-mode"
+    ]
+    telemetryConsent: "no"
+  "easy-motion-redux": {}
+  editor:
+    fontSize: 12
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    "soft-wrap": true
+    softWrap: true
+  "exception-reporting":
+    userId: "c8e0a85c-b6cb-3b8b-ca04-f619cc513482"
+  "fast-eslint": {}
+  jumpy: {}
+  "linter-haml": {}
+  "tree-view": {}
+  "vim-mode-plus":
+    highlightSearch: true
+    showHoverOnOperateIcon: "emoji"
+    stayOnYank: true
+    wrapLeftRightMotion: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+    keepMarkdownLineBreakWhitespace: false
+  zentabs:
+    maximumOpenedTabs: 7
+    neverCloseUnsaved: true

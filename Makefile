@@ -12,6 +12,8 @@ symlink:
 	ln -s `pwd`/dunstrc ~/.config/dunst/dunstrc
 	ln -s `pwd`/gtkrc-2.0 ~/.gtkrc-2.0
 	ln -s `pwd`/Xresources ~/.Xresources
+	ln -s `pwd`/atom-config.cson ~/.atom/config.cson
+	ln -s `pwd`/atom-keymap.cson ~/.atom/keymap.cson
 
 bin_folder:
 	mkdir -p ~/bin
@@ -33,6 +35,10 @@ depends:
 	# rxvt depends
 	sudo apt-get install xclip # copy paste for terminal
 	sudo cp rxvt/urxvtclip /usr/lib/urxvt/perl/clipboard
+	
+	# atom install
+	sudo add-apt-repository ppa:webupd8team/atom
+	sudo apt update; sudo apt install atom
 
 dropbox:
 	./setup_drobox.sh
