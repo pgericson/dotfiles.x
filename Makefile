@@ -12,6 +12,7 @@ symlink:
 	ln -s `pwd`/dunstrc ~/.config/dunst/dunstrc
 	ln -s `pwd`/gtkrc-2.0 ~/.gtkrc-2.0
 	ln -s `pwd`/Xresources ~/.Xresources
+	mkdir ~/.atom
 	ln -s `pwd`/atom-config.cson ~/.atom/config.cson
 	ln -s `pwd`/atom-keymap.cson ~/.atom/keymap.cson
 
