@@ -8,16 +8,16 @@ case "$1" in
         i3-msg exit
         ;;
     suspend)
-        sudo pm-suspend | i3lock -c 000000
+        pm-suspend | i3lock -c 000000
         ;;
     hibernate)
-        sudo pm-hibernate
+        pm-hibernate
         ;;
     reboot)
-        sudo reboot
+        reboot
         ;;
     shutdown)
-        sudo poweroff
+        poweroff
         ;;
     *)
         echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
