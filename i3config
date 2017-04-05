@@ -189,6 +189,7 @@ bindsym $mod+r mode "resize"
 # automatically starting applications on i3 startup
 
 exec --no-startup-id xrandr --output eDP-1 --auto --scale 1.5x1.5 --panning 3840x2160
+exec --no-startup-id syndaemon -i 0.5 -d -t -K
 exec --no-startup-id dropbox start # Start Dropbox
 exec --no-startup-id nm-applet -sm-disable # Start  Network Manager
 exec --no-startup-id blueman-applet # Start bluetooth manager
