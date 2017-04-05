@@ -14,7 +14,7 @@ symlink:
 	ln -s `pwd`/Xresources ~/.Xresources
 
 bin_folder:
-	mkdir ~/bin
+	mkdir -p ~/bin
 	# Don't overwrite anything
 	for x in bin/*; do \
 		if [ ! -f ~/$$x  ]; then\

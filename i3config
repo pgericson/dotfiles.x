@@ -17,7 +17,7 @@
 # mod5        n/a
 
 # set $mod to super key
-set $mod Mod4
+set $mod Mod1
 
 # Set Font for Window Titles.
 font xft:mononoki 12
@@ -33,7 +33,7 @@ bindsym $mod+Delete exec i3lock -c 000000 -d
 exec --no-startup-id xautolock -time 5 -locker "i3lock -c 000000 -d" -corner -000
 
 # Lock and suspend
-bindsym $mod+shift+l exec i3lock -c 000000 -d & sudo pm-suspend
+bindsym $mod+shift+Delete exec i3lock -c 000000 -d & sudo pm-suspend
 
 # Print Screen = Screenshot
 bindsym Print exec scrot -q 100
@@ -41,25 +41,25 @@ bindsym Print exec scrot -q 100
 # Volume up / down / mute
 
 # standard amixer
-# bindsym Control+Up              exec amixer -q sset Master 2%+ unmute
-# bindsym Control+Down            exec amixer -q sset Master 2%- unmute
-# bindsym XF86AudioRaiseVolume    exec amixer -q sset Master 2%+ unmute
-# bindsym XF86AudioLowerVolume    exec amixer -q sset Master 2%- unmute
-# bindsym XF86AudioMute exec amixer -q set Master toggle; exec amixer -q set Headphone unmute; exec amixer -q set Speaker unmute # does not work proberbly
+bindsym Control+Up              exec amixer -q sset Master 2%+ unmute
+bindsym Control+Down            exec amixer -q sset Master 2%- unmute
+bindsym XF86AudioRaiseVolume    exec amixer -q sset Master 2%+ unmute
+bindsym XF86AudioLowerVolume    exec amixer -q sset Master 2%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle; exec amixer -q set Headphone unmute; exec amixer -q set Speaker unmute # does not work proberbly
 
-bindsym Control+Up              exec ~/bin/sound "+2"
-bindsym Control+Down            exec ~/bin/sound "-2"
-bindsym XF86AudioRaiseVolume    exec ~/bin/sound "+2"
-bindsym XF86AudioLowerVolume    exec ~/bin/sound "-2"
-bindsym XF86AudioMute           exec ~/bin/sound "mute"
+# bindsym Control+Up              exec ~/bin/sound "+2"
+# bindsym Control+Down            exec ~/bin/sound "-2"
+# bindsym XF86AudioRaiseVolume    exec ~/bin/sound "+2"
+# bindsym XF86AudioLowerVolume    exec ~/bin/sound "-2"
+# bindsym XF86AudioMute           exec ~/bin/sound "mute"
 
 # Hivemind setup
 bindsym Control+Shift+Up        exec ~/bin/hivemind_volume up
 bindsym Control+Shift+Down      exec ~/bin/hivemind_volume down
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp     exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown   exec xbacklight -dec 5 # decrease screen brightness
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Do not focus on window, on mouse hover
 focus_follows_mouse no
@@ -68,12 +68,9 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec gnome-terminal
 # NOTE add +aw for no wordwrap in stdout
+bindsym $mod+Control+Return split v, exec rxvt
 bindsym $mod+Return exec rxvt
-
-# start a sunray terminal
-#bindsym $mod+Shift+Return exec rxvt -e ~/bin/sunray --noclose
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -86,7 +83,7 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+u focus mode_toggle
+#bindsym $mod+u focus mode_toggle
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -185,6 +182,7 @@ bindsym $mod+r mode "resize"
 # AUTOSTART
 # automatically starting applications on i3 startup
 
+exec --no-startup-id xrandr --output eDP-1 --auto --scale 1.5x1.5 --panning 3840x2160
 exec --no-startup-id dropbox start # Start Dropbox
 exec --no-startup-id nm-applet -sm-disable # Start  Network Manager
 exec --no-startup-id blueman-applet # Start bluetooth manager
@@ -233,10 +231,9 @@ bar {
 
 ##
 ## system
-###
-#set $mode_system (l) lock, (o) logout, (s) suspend, (r) reboot, (p) poweroff
+##
+
 bindsym $mod+Control+Delete mode "$mode_system (l) lock, (o) logout, (s) suspend, (r) reboot, (h) hibernate, (p) poweroff"
-bindsym Ctrl+$mod+BackSpace mode "$mode_system (l) lock, (o) logout, (s) suspend, (r) reboot,(h) hibernate, (p) poweroff"
 mode "$mode_system (l) lock, (o) logout, (s) suspend, (r) reboot, (h) hibernate, (p) poweroff" {
     bindsym l exec --no-startup-id i3lock -c 000000, mode "default"
     bindsym o exec --no-startup-id i3exit logout, mode "default"
