@@ -61,6 +61,9 @@ bindsym Control+Shift+Down      exec ~/bin/hivemind_volume down
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+# change keyboard layout
+bindsym $mod+Control+u exec toggle_keyboard_layout
+
 # Do not focus on window, on mouse hover
 focus_follows_mouse no
 
