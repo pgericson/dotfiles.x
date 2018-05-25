@@ -208,8 +208,8 @@ exec --no-startup-id xset -dpms
 # Enable power-save
 exec --no-startup-id sudo pm-powersave
 
-# Reset Caps_Lock as Super
-exec --no-startup-id setxkbmap -option caps:hyper
+# Reset Caps_Lock as Escape
+exec --no-startup-id setxkbmap -option caps:escape
 
 # Set background color
 exec --no-startup-id xsetroot -solid '#222222'
